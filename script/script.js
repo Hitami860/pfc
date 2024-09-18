@@ -16,6 +16,7 @@ function choicePierre() {
     let img = document.createElement('img');
     img.src = "image/pierre.png";
     choixUser.appendChild(img);
+    img.style.height = "300px";
 
 
 }
@@ -26,6 +27,7 @@ function choiceFeuille() {
     let img = document.createElement('img');
     img.src = "image/feuille.png";
     choixUser.appendChild(img);
+    img.style.height = "300px";
 
 }
 
@@ -36,6 +38,7 @@ function choiceCiseaux() {
     let img = document.createElement('img');
     img.src = "image/sciceaux.png";
     choixUser.appendChild(img);
+    img.style.height = "300px";
 
 }
 
@@ -89,6 +92,7 @@ let choixOpponent = document.getElementById('choixOpponent')
     let img2 = document.createElement('img');
     img2.src = choix[random]['image'];
     choixOpponent.appendChild(img2);
+    img2.style.height = "300px";
 });
 
 
