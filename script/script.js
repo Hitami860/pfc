@@ -6,6 +6,7 @@ let choixOpponent = document.getElementById('choixOpponent')
 let btnfeuille = document.getElementById('btnfeuille')
 let btnpierre = document.getElementById('btnpierre')
 let score = 0;
+let scoree= 0;
 
 fetch('json/choix.json')
     .then(response => response.json())
@@ -30,6 +31,7 @@ fetch('json/choix.json')
 
             choice(btnpierre.id, random)
             document.getElementById('btnpierre').style.visibility = 'hidden'
+            document.getElementById('btncontinue').style.visibility = 'visible'
         });
 
 
@@ -42,6 +44,7 @@ fetch('json/choix.json')
             document.getElementById('btnfeuille').style.visibility = 'hidden'
             choice(btnfeuille.id, random)
             document.getElementById('btnfeuille').style.visibility = 'hidden'
+            document.getElementById('btncontinue').style.visibility = 'visible'
 
         });
 
@@ -56,6 +59,7 @@ fetch('json/choix.json')
 
             choice(btnciseaux.id, random);
             document.getElementById('btnciseaux').style.visibility = 'hidden'
+            document.getElementById('btncontinue').style.visibility = 'visible'
 
         });
 
@@ -113,6 +117,31 @@ function choice(params, random) {
 
     img.style.height = "300px";
 
+    if (points == "image/pierre.png" && random == 1) {
+        console.log("feuille")
+        scoree += 1;
+
+        opponentscore.innerText = 'score:' + scoree
+    }else if(points == "image/feuille.png" && random == 2){
+        console.log("ciseau")
+        scoree += 1;
+
+        opponentscore.innerText = 'score:' + scoree
+    }else if(points == "image/sciceaux.png" && random == 0){
+        console.log("pierre")
+        scoree += 1;
+
+        opponentscore.innerText = 'score:' + scoree
+    }
+
+    if (score == 1){
+        alert('Bien joué vous avez gagné ')
+    } else if(scoree == 1){
+        alert("C'est perdu ")
+    }
+
+
+    
 }
 
 
@@ -122,6 +151,8 @@ function choice(params, random) {
 document.getElementById('btnpierre').style.visibility = 'hidden'
 document.getElementById('btnfeuille').style.visibility = 'hidden'
 document.getElementById('btnciseaux').style.visibility = 'hidden'
+document.getElementById('btncontinue').style.visibility = 'hidden'
+
 
 
 let btnstart = document.getElementById('btnstart')
@@ -132,6 +163,18 @@ btnstart.addEventListener('click', () => {
     document.getElementById('btnpierre').style.visibility = 'visible'
     document.getElementById('btnfeuille').style.visibility = 'visible'
     document.getElementById('btnciseaux').style.visibility = 'visible'
+
+});
+
+let btncontinue = document.getElementById('btncontinue')
+
+btnstart.addEventListener('click', () => {
+
+    document.getElementById('btnstart').style.visibility = 'hidden'
+    document.getElementById('btnpierre').style.visibility = 'visible'
+    document.getElementById('btnfeuille').style.visibility = 'visible'
+    document.getElementById('btnciseaux').style.visibility = 'visible'
+    
 
 });
 

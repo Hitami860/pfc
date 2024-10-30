@@ -9,7 +9,7 @@
     <title>Pfc</title>
 </head>
 
-<body class="bg-gray-700 text-white">
+<body class="bg-gray-700 text-white ">
     <header>
 
 
@@ -17,20 +17,34 @@
     </header>
     <main class="container mx-auto">
 
-        <button id="btnstart" class="text-xl mt-7 border rounded-full border-gray-900 border-h-4 bg-gray-900 font-semibold">Start the game</button>
+        <p class="font-semibold text-center">Règle: le premier qui arrive à 5 a gagné </p>
+        <div class="pl-[45%]">
+        <button id="btnstart"
+            class=" w-[20%] text-xl mt-7 border rounded-full border-gray-900 border-h-4 bg-gray-900 font-semibold">Start
+            the
+            game
+        </button>
+    </div>
 
         <div class="flex justify-between mt-20">
             <div class="flex flex-col">
                 <h2 id="player" class="text-4xl text-red-400">Player</h2>
-                <p id="playerscore" class="text-2xl">score:</p>
+                <p id="playerscore" class="text-2xl">score: 0</p>
                 <div id="choixUser" class="mt-[45%]"></div>
             </div>
             <div id="vs"></div>
             <div class="flex flex-col">
-                <h2 id="opponent" class="text-4xl text-red-400">Opponent</h2>
-                <p id="opponentscore" class="text-2xl">score:</p>
+                <h2 id="opponent" class="text-4xl text-red-400">Adversaire</h2>
+                <p id="opponentscore" class="text-2xl">score: 0</p>
                 <div id="choixOpponent" class="mt-[45%]"></div>
             </div>
+        </div>
+
+        <div class="pl-[45%]">
+            <button id="btncontinue"
+                class=" w-[13%] text-center text-xl mt-7 border rounded-full border-gray-900 border-h-4 bg-gray-900 font-semibold">
+                Continuer
+            </button>
         </div>
 
         <div class="flex gap-20 mx-[40%] items-center mt-[30%] border border-2">
