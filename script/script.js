@@ -138,10 +138,10 @@ function choice(params, random) {
         opponentscore.innerText = 'score:' + scoree
     }
 
-    if (score == 10){
-        alert('Bien joué vous avez gagné ')
-    } else if(scoree == 10){
-        alert("C'est perdu ")
+    if (score == 5){
+        alert("Bien joué vous avez gagné c'est cool pour vous mais c'est pas ca qui fera que vous serez plus un chomeur ")
+    } else if(scoree == 5){
+        alert("C'est perdu vous êtes nul !! ")
     }
 
 
