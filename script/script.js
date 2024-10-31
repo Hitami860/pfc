@@ -20,30 +20,32 @@ fetch('json/choix.json')
             return Math.floor(Math.random() * params.length);
         }
 
-
-        random = randomChoix(choix)
+        
 
         btnpierre.addEventListener('click', () => {
+            choixOpponent.innerHTML = ''
+            random = randomChoix(choix)
             let img2 = document.createElement('img');
             img2.src = choix[random]["image"];
             choixOpponent.appendChild(img2);
-            img2.style.height = "300px";
+            img2.style.height = "200px";
 
             choice(btnpierre.id, random)
-            document.getElementById('btnpierre').style.visibility = 'hidden'
+            // document.getElementById('btnpierre').style.visibility = 'hidden'
             document.getElementById('btncontinue').style.visibility = 'visible'
         });
 
 
 
         btnfeuille.addEventListener('click', () => {
+            choixOpponent.innerHTML = ''
+            random = randomChoix(choix)
             let img2 = document.createElement('img');
             img2.src = choix[random]["image"];
             choixOpponent.appendChild(img2);
-            img2.style.height = "300px";
-            document.getElementById('btnfeuille').style.visibility = 'hidden'
+            img2.style.height = "200px";
+            // document.getElementById('btnfeuille').style.visibility = 'hidden'
             choice(btnfeuille.id, random)
-            document.getElementById('btnfeuille').style.visibility = 'hidden'
             document.getElementById('btncontinue').style.visibility = 'visible'
 
         });
@@ -51,14 +53,15 @@ fetch('json/choix.json')
 
 
         btnciseaux.addEventListener('click', () => {
+            choixOpponent.innerHTML = ''
+            random = randomChoix(choix)
             let img2 = document.createElement('img');
             img2.src = choix[random]["image"];
             choixOpponent.appendChild(img2);
-            img2.style.height = "300px";
-            document.getElementById('btnciseaux').style.visibility = 'hidden'
+            img2.style.height = "200px";
+            // document.getElementById('btnciseaux').style.visibility = 'hidden'
 
             choice(btnciseaux.id, random);
-            document.getElementById('btnciseaux').style.visibility = 'hidden'
             document.getElementById('btncontinue').style.visibility = 'visible'
 
         });
@@ -76,6 +79,7 @@ fetch('json/choix.json')
 function choice(params, random) {
 
     let choixUser = document.getElementById('choixUser');
+    choixUser.innerHTML = '';
     let img = document.createElement('img');
     let points;
 
@@ -115,7 +119,7 @@ function choice(params, random) {
     }
 
 
-    img.style.height = "300px";
+    img.style.height = "200px";
 
     if (points == "image/pierre.png" && random == 1) {
         console.log("feuille")
@@ -134,9 +138,9 @@ function choice(params, random) {
         opponentscore.innerText = 'score:' + scoree
     }
 
-    if (score == 1){
+    if (score == 3){
         alert('Bien joué vous avez gagné ')
-    } else if(scoree == 1){
+    } else if(scoree == 3){
         alert("C'est perdu ")
     }
 
@@ -170,11 +174,6 @@ let btncontinue = document.getElementById('btncontinue')
 
 btnstart.addEventListener('click', () => {
 
-    document.getElementById('btnstart').style.visibility = 'hidden'
-    document.getElementById('btnpierre').style.visibility = 'visible'
-    document.getElementById('btnfeuille').style.visibility = 'visible'
-    document.getElementById('btnciseaux').style.visibility = 'visible'
-    
-
 });
+
 
